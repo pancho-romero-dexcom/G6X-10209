@@ -41,3 +41,13 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+  upload_artifact:
+     runs-on: bigsur
+     needs: build
+     if: always()
+     steps:   
+     - uses: actions/upload-artifact@v2
+       with:
+        name: build-artifact
+        path: fastlane/build/
