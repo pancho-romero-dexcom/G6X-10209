@@ -43,7 +43,7 @@ jobs:
           echo test, and deploy your project.
 
   upload_artifact:
-     runs-on: bigsur
+     runs-on: self-hosted
      needs: build
      if: always()
      steps:   
